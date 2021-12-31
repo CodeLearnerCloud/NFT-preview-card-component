@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-bold: 600;
+
+  -fz-p: 1.125rem;
+
+  --clr-primary: hsl(215, 51%, 70%);
+  --clr-secondary: hsl(178, 100%, 50%);
+  --clr-main-bg: hsl(217, 54%, 11%);
+  --clr-card-bg: hsl(216, 50%, 16%);
+  --clr-line: hsl(215, 32%, 27%);
+  --clr-white: hsl(0, 0%, 100%);
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  font-size: var(--fz-p);
+  background: var(--clr-main-bg, black);
+  color: var(--clr-primary);
+
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.attribution {
+    text-align: center;
+}
+
+.title {
+    color: var(--clr-white);
+    font-size: 1.3rem;
+    margin: 1em auto;
+    cursor: pointer;
+}
+
+.creator-name {
+    color: var(--clr-white);
+    cursor: pointer;
+}
+
+.creator {
+    border-top: 1px solid var(--clr-line);
+    display: flex;
+    align-items: center;
+    padding-top: 1em;
+}
+
+.avatar {
+    border: 1px solid var(--clr-white);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1em;
+}
+
+.price-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em auto;
+}
+
+.price, .days {
+    display: flex;
+    height: 10vh;
+}
+
+.icon-clock {
+    margin-right: .5em;
+    width: 17px;
+    height: 17px;
+}
+
+.icon-eth {
+    margin-right: .5em;
+    width: 11px;
+    height: 18px;
+}
+
+.eth {
+    font-weight: var(--fw-bold);
+    color: var(--clr-secondary);
+}
+
+.img {
+    width: 100%;
+    border-radius: .6rem;
+    position: relative;
+}
+
+.card-img {
+    display: grid;
+    place-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.card-img:hover:after {
+    position: absolute;
+    content: url(images/icon-view.svg);
+}
+
+.card-img:hover::before {
+    background: var(--clr-secondary);
+    inset: 0;
+    content: '';
+    z-index: 1;
+    opacity: .5;
+    border-radius: .6rem;
+    position: absolute;
+}
+
+
+.container {
+    background: var(--clr-card-bg);
+
+    width: 80%;
+    border-radius: 1em;
+}
+
+.card {
+    padding: 1.5em;
+}
+
+.desc {
+    line-height: 1.8;
+}
+
+@media screen and (min-width: 375px) {
+    .container {
+        width: 21.875em;
+    }
+}
+
+.creator-name:hover,
+.title:hover {
+    color: var(--clr-secondary);
+}
